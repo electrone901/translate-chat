@@ -1,31 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom';
 import './App.css';
 
+import Chat from './component/Chat';
+import Navbar from './component/layout/Navbar';
+import Footer from './component/layout/Footer';
+
 function App() {
-    return ( <
-        div className = "App" >
-        <
-        header className = "App-header" >
-        <
-        img src = { logo }
-        className = "App-logo"
-        alt = "logo" / >
-        <
-        p >
-        Edit < code > src / App.js < /code> and save to reload. < /
-        p > <
-        a className = "App-link"
-        href = "https://reactjs.org"
-        target = "_blank"
-        rel = "noopener noreferrer" >
-        Learn React <
-        /a> < /
-        header > <
-        button type = "button"
-        class = "btn btn-success" > Primary < /button> < /
-        div >
+    return ( 
+        <Router>
+          <div className="App">
+            <Navbar />
+            <div>
+              <Switch>
+                <Route exact path="/chat" component={Chat} />
+              </Switch>
+            </div>
+            <Footer />
+          </div>
+        </Router>
     );
 }
-
 export default App;
