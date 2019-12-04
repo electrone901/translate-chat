@@ -1,19 +1,31 @@
-import React, {Component} from 'react';
-import logo from './logo.svg';
+
+import React from 'react';
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom';
+
 import './App.css';
+import Landing from './component/Landing';
 import Chat from './component/Chat';
-import Landing from './component/Landing'
+import Navbar from './component/layout/Navbar';
+import Footer from './component/layout/Footer';
+
  
 class App extends Component{
-
-    render(){
     return ( 
-        <div>
-            <Chat/>
-            <Landing/>
-        </div >
+        <Router>
+          <div className="App">
+            <Navbar />
+            <div>
+              <Switch>
+                <Route exact path="/chat" component={Chat} />
+              </Switch>
+            </div>
+            <Footer />
+          </div>
+        </Router>
     );
-    }
 }
-
 export default App;
