@@ -13,13 +13,14 @@ import Navbar from './component/layout/Navbar';
 import Footer from './component/layout/Footer';
 
  
-class App extends Component{
-    return ( 
-        <Router>
+class App extends React.Component{
+    render(){
+    return (<Router>
           <div className="App">
             <Navbar />
             <div>
               <Switch>
+                <Route exact path="/" component={Landing} />
                 <Route exact path="/chat" component={Chat} />
               </Switch>
             </div>
@@ -27,5 +28,6 @@ class App extends Component{
           </div>
         </Router>
     );
+    }
 }
 export default App;
