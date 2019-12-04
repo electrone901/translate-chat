@@ -3,11 +3,19 @@ import '../CSS/Landing.css'
 
 
 export default class Landing extends Component {
+
+
+   state={
+       name:''
+
+   } 
+
+
     render() {
         return (<form>
             <div className="form-group">
               <label for="exampleFormControlInput1">Username</label>
-              <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Jane Doe"/>
+              <input type="text" className="form-control" name="name" value={this.state.name}placeholder="Jane Doe"/>
             </div>
 
             <div class="form-group">
